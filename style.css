@@ -1,0 +1,162 @@
+body
+{
+    width: 62.5%;
+    text-align: justify;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Signika Negative', sans-serif; 
+}
+
+time, article p
+{
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Signika Negative', sans-serif;
+    font-weight: 700;
+}
+
+a, abbr{text-decoration: none;}
+
+header
+{
+    width: fit-content;
+    height: auto;   
+    border-radius: 20px;
+    padding: 1em 2em 1em 2em;
+    position: fixed;
+    text-align: center;
+}
+
+header li
+{
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+header ul{padding-left: 0.5em;}
+
+header h1, header h2, .portfolio
+{
+    font-family: 'Pacifico', cursive;
+    color:#5d4083d5;
+}
+
+header h1{font-weight: 900;}
+
+header h2
+{
+    font-weight: 700;
+    font-size:1.25em;
+}
+
+.portfolio
+{
+    font-weight: 500;
+}
+
+.mail img
+{
+    padding-right: 0.5em;
+}
+
+.mail, .envoyer
+{
+    border: solid 1px #bdbdbd;
+    border-radius: 48px;
+    background-color: #5d4083d5;
+}
+
+.photo
+{
+    border: solid 1px #bdbdbd;
+    border-radius: 250px;
+}
+
+main
+{
+    width: 50em;
+    height: auto;
+    position: absolute;
+    left:30em;
+    padding: 2em;
+}
+
+aside, .item{text-align: center;}
+
+header, aside, section h1
+{
+    border: solid 1px #bdbdbd;
+}
+
+section{padding-bottom: 3em;}
+
+section h1
+{
+    display: inline-block;
+    padding: 0.25em;
+}
+
+.competences img{padding-right: 0.5em; padding-left: 0.5em;}
+
+aside
+{
+    position: fixed;
+    right: 1em;
+    top: 25%;
+    padding:0.75em;
+    
+}
+
+aside ul{padding:0px;}
+
+aside img
+{
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+}
+
+aside, .item, section h1
+{
+    border: solid 1px #bdbdbd;
+    border-radius: 48px;
+}
+
+li{list-style-type: none;}
+
+.social_network_icon {display: inline;}
+
+.container
+{
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(2, auto);
+}
+
+.container h2, .git{grid-column: -1/1;}
+
+.item
+{
+    margin: 2em;
+    padding:1em;
+    justify-self: center;
+}
+
+.item img{margin-bottom: 2em;}
+
+.profil p, iframe{padding-left: 2.5em;}
+
+.mail_label{padding-left: 3em}
+
+address
+{
+    padding-bottom: 2em;
+}
+
+address li{line-height: 2em;}
+
+.envoyer
+{
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Signika Negative', sans-serif; 
+    font-weight: 700;
+    font-size: 1.25em;
+    padding: 0.5em;
+}
