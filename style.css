@@ -18,7 +18,7 @@ a, abbr{text-decoration: none;}
 header
 {
     width: fit-content;
-    height: auto;   
+    height: 95vh;   
     border-radius: 20px;
     padding: 1em 2em 1em 2em;
     position: fixed;
