@@ -10,7 +10,7 @@ export default function SkillSection() {
             <Title title={'COMPETENCES'}>
                 <VscTools />
             </Title>  
-            <article style={{display: "flex", justifyContent: "center", alignItems: "start", gap: "1.5em"}}>
+            <article style={{display: "flex",flexDirection: "row", justifyContent: "center", alignItems: "start", gap: "1.5em"}}>
                 <Programmation/>
                 <ProductLeadership/>
                 <Software/>

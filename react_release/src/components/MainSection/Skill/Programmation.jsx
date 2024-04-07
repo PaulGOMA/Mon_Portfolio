@@ -31,7 +31,7 @@ export default function Programmation() {
 
     let style = {
         padding: "20px 18px",
-        width: "fit-content",
+        width: "max-content",
         height: '15em',
         borderColor : "#BAB7B7",
         borderWidth : "3.5px",
