@@ -4,7 +4,7 @@ import ProjectItem from './ProjectItem';
 
 export default function ProjectSection() {
     return(
-        <section style={{display: "flex", flexDirection: "column", gap: "2em", width: "100%", minHeight: "auto"}} id='project'>
+        <section style={{display: "flex", flexDirection: "column", gap: "2em", width: "100%", minHeight: "auto", marginBottom: "2rem"}} id='project'>
             <Title title={'PROJETS'}>
                 <GrProjects />
             </Title>
@@ -61,6 +61,3 @@ export default function ProjectSection() {
         </section>
     )
 }
-
-// src/assets/Flutter_project.mp4
-//https://paulgoma.github.io/Dashboard-admin/

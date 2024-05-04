@@ -8,16 +8,16 @@ import { IconContext } from 'react-icons';
 
 export default function ContactSection() {
     return(
-        <section style={{display: "flex", flexDirection: "column", gap: "2em", width: "100%", minHeight: "100vh"}} id='contact'>
+        <section style={{display: "flex", flexDirection: "column", width: "100%", minHeight: "100vh", justifyContent: "start"}} id='contact'>
             <Title title={"CONTACT"}>
                 <BsTelephone />
             </Title>
-            <article>
+            <article style={{height: "100vh", display: "flex", justifyContent: "center", flexDirection: "column"}}>
                 <IconContext.Provider value={{size: '1em', color: "#FBBE6C"}}>
-                    <div>
+                    <div style={{marginBottom: "2rem"}}>
                         <FaLocationDot /><span style={{marginLeft : "1em"}}>43 rue des quatre moulins, Carrières sous Poissy, France</span>
                     </div>
-                    <div>
+                    <div style={{marginBottom: "2rem"}}>
                         <BsTelephoneFill /><span style={{marginLeft : "1em"}}>+33 7 44 87 25 15</span>
                     </div>
                     <div>
