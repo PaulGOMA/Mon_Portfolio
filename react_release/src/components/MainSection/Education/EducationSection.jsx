@@ -1,31 +1,22 @@
 import EducationItem from './EducationItem';
-import Title from '../Title'
+import Title from '../../../utils/Title'
 import { IoSchoolOutline } from "react-icons/io5";
+import { EducationInfos } from '../../../utils/EducationInfos';
 
 export default function EducationSection() {
     return(
-        <section style={{display: "flex", flexDirection: "column", gap: "2em"}}>
+        <section style={{display: "flex", flexDirection: "column", width: "100%", minHeight: "100vh", justifyContent: "start"}} id='education'>
             <Title title={'ETUDES & EXPERIENCE PROFESSIONNELLE'}>
                 <IoSchoolOutline />
             </Title>
-            <article>
-                <EducationItem year={"2023 - 2025"} establishment={"ECE Paris"} schoolUrl={"https://www.ece.fr/"}>
-                    <p style={{fontSize: "18px", fontWeight: "bold"}}>Ingénieur Product Engineering and Innovation (en cours)</p>
-                </EducationItem> 
-                <EducationItem year={"2018 - 2023"} establishment={"Ecole Nationale Superieure Polytechnique-Université Marien NGOUABI-Congo Brazzaville"}>
-                    <p style={{fontSize: "18px", fontWeight: "bold"}}>
-                        Master en Mécanique Energétique et Ingeniérie (2023)<br/><br/>
-                        Licence en Maintenance Industrielle (2021)
-                    </p>
-                </EducationItem> 
-                <EducationItem year={"2021"} establishment={"Port autonome de Pointe-Noire"} schoolUrl={"http://www.papn-cg.org/fr/accueil/"}>
-                    <p style={{fontSize: "18px", fontWeight: "bold"}}>Stage au Port autonome de Pointe-Noire (Congo Brazaville) à la direction
-                            des équipements et infrastructures (3 mois)
-                    </p>
-                </EducationItem>
-                <EducationItem year={"2018"} establishment={"Lycée Charlemagne"} schoolUrl={"https://lycee-charlemagne-pnr.com/"}>
-                    <p style={{fontSize: "18px", fontWeight: "bold"}}>Baccalauréat scientifique série S </p> 
-                </EducationItem>                  
+            <article style={{height: "100vh", display: "flex", justifyContent: "center", flexDirection: "column"}}>
+                {
+                    EducationInfos.map((education) => (
+                        <EducationItem key={education.year} year={education.year} establishment={education.establishment} schoolUrl={education.url}>
+                            {education.info}
+                        </EducationItem>
+                    ))
+                }
             </article>
         </section>
     )

@@ -5,7 +5,7 @@ import EducationSection from './Education/EducationSection'
 import SkillSection from './Skill/SkillSection'
 import CertificateSection from './Certificate/CertificateSection'
 import ProjectSection from './Project/ProjectSection'
-
+import ContactSection from './Contact/ContactSection'
 
 
 export default function MainSection() {
@@ -16,7 +16,8 @@ export default function MainSection() {
             <EducationSection/>
             <SkillSection/>  
             <CertificateSection/>  
-            <ProjectSection/>        
+            <ProjectSection /> 
+            <ContactSection/>
         </main>
     )
 }

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { RiExternalLinkLine } from "react-icons/ri";
+import PropTypes from 'prop-types'
 
 export default function EducationItem({year, children, establishment, schoolUrl}) {
 
@@ -41,10 +42,10 @@ export default function EducationItem({year, children, establishment, schoolUrl}
     return(
         <section style={style} onPointerEnter={() => setHover(true)} onPointerLeave={() => setHover(false)}>
             <div style={circleStyle}/>
-            <div style={{display: "flex", flexDirection: "column", gap: "1em"}}>
-                <time style={{fontSize: "16px", color: hover ? "#FBBE6C" : "#BAB7B7"}}>{year}</time>
+            <div style={{display: "flex", flexDirection: "column", gap: "1em", fontSize: "1.2rem"}}>
+                <time style={{fontSize: "1.2rem", color: hover ? "#FBBE6C" : "#BAB7B7"}}>{year}</time>
                 {children}
-                <p style={{display: "flex", flexDirection: "row", gap: "1em"}}>
+                <p style={{display: "flex", flexDirection: "row", gap: "1em", fontSize: "1.2rem"}}>
                     {establishment}
                     <a href={schoolUrl} target="_blank">
                         <RiExternalLinkLine color={hover ? "#FBBE6C" : "#BAB7B7"}/>
@@ -54,4 +55,11 @@ export default function EducationItem({year, children, establishment, schoolUrl}
             </div>
         </section>
     )
+}
+
+EducationItem.propTypes = {
+    year: PropTypes.string.isRequired,
+    establishment: PropTypes.string.isRequired,
+    schoolUrl: PropTypes.string.isRequired,
+    children: PropTypes.string.isRequired
 }

@@ -1,14 +1,11 @@
 import IconBorder from './iconBorder';
 import MailButton from './MailButton';
 import './infocard.css';
-import { MdOutlineFacebook } from "react-icons/md";
-import { PiInstagramLogoFill } from "react-icons/pi";
-import { FaLinkedin } from "react-icons/fa";
-import { FaPinterest } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
 import { GoMail } from "react-icons/go";
+import { InfocardIcons } from '../../utils/Icons';
 
 export default function Infocard() {
+    
     return <aside className="Infocard-container">
         <h1 className='name'>Paul Valerie GOMA</h1>
         <h2 className='student'>Etudiant, France</h2>
@@ -17,21 +14,11 @@ export default function Infocard() {
         </div>
         <h3 className='portfolio'>mon portfolio</h3>
         <section className='icon-container'>
-            <IconBorder url={"https://github.com/PaulGOMA"}>
-                <FaGithub />
-            </IconBorder>
-            <IconBorder url={"https://www.facebook.com/paul.goma.50/"}>
-                <MdOutlineFacebook/>
-            </IconBorder>
-            <IconBorder url={"https://www.instagram.com/paul_valerie_goma/"}>
-                <PiInstagramLogoFill />
-            </IconBorder>
-            <IconBorder url={"https://www.linkedin.com/in/paul-valerie-goma-1a9a2a143/"}>
-                <FaLinkedin />
-            </IconBorder>
-            <IconBorder url={"https://www.pinterest.fr/gomapaul/"}>
-                <FaPinterest />
-            </IconBorder>
+            {
+                InfocardIcons.map((icon) => (
+                    <IconBorder key = {icon.url} url={icon.url}>{icon.icon}</IconBorder>
+                ))
+            }
         </section>
         <MailButton url={"mailto: paulgoma07@gmail.com"}>
             <GoMail />

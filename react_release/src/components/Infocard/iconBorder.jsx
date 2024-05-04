@@ -5,26 +5,19 @@ export default function IconBorder({children, url}) {
     const [hover, setHover] = useState(false);
 
     let style = {
-        padding: "10px",
+        padding: "0.6em",
         borderWidth : "2.5px",
         borderStyle : "solid",
-        borderColor : "#BAB7B7",
+        borderColor : hover ? "#FFB04A" : "white",
         borderRadius: "50%",
+        transition: hover ? "0.3s" : "none"
 
-    }
-
-    if(hover){
-        style = {
-            ...style,
-            borderColor : "#FFB04A",
-            transition: "0.3s"
-        }
     }
 
     return(
         <div style={style} onPointerEnter={() => setHover(true)} onPointerLeave={() => setHover(false)}>
             <a href={url} target="_blank" style={{textDecoration: "none", display: "flex"}}>
-                <IconContext.Provider value={{size: '1.2em', color: hover ? "#FFB04A" : "#BAB7B7"}}>
+                <IconContext.Provider value={{size: '1.2em', color: hover ? "#FFB04A" : "white"}}>
                     {children}
                 </IconContext.Provider>
             </a>

@@ -1,36 +1,42 @@
+import { useId } from "react"
 import  Link  from "./Link"
 
-function Tool({toolStyle, tool}) {
+function Tool({toolStyle, tools}) {
 
     return(
-        <div style={toolStyle}>
-            {tool}
-        </div>
+        <ul style={{display: "flex", flexDirection: "row", justifyContent: "start", alignSelf: "start", listStyle: "none", gap: "0.5em"}}>
+            {tools.map(tool => (
+                <li key={tool} style={toolStyle}>{tool}</li>
+            ))}
+        </ul>
     )
 }
 
 
-export default function ProjectItem({image, tool, title, content, typePath, path}) {
+export default function ProjectItem({image, tools, title, content, typePath, path}) {
 
     let style = {
         width: "100%",
-        height: "auto",
-        position: "relative"
+        height: "100%",
+        position: "relative",
+        boxShadow: "1px 1px 3px black",
+        borderRadius: "20px",
+        display: "flex"
     }
 
     let layer = {
-        background: "linear-gradient(#2E2C2928, #FBBD6C6E)",
+        background: "linear-gradient(#24221E60, #15284EBD)",
         position: "absolute",
         borderRadius: "20px",
         left: "0px",
-        bottom: "0px",
+        top: "0px",
         width: "100%",
         height: "100%",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
         alignItems: "center",
-        padding: "20px",
+        padding: "5px",
         boxSizing: "border-box",
         gap: "1em"
     }
@@ -38,11 +44,11 @@ export default function ProjectItem({image, tool, title, content, typePath, path
     let toolStyle = {
         width: "fit-content",
         height: "auto",
-        padding: "10px 15px",
+        padding: "0.5em 1em",
         backgroundColor: "#FFF",
         color: "#152131",
         borderRadius: "2.5em",
-        alignSelf: "start"
+        
     }
 
     return(
@@ -52,7 +58,7 @@ export default function ProjectItem({image, tool, title, content, typePath, path
                 <h2 style={{color: "#FFF"}}>{title}</h2>
                 <p style={{color: "#FFF"}}>{content}</p>
                 <Link type={typePath} path={path}/>
-                <Tool toolStyle={toolStyle} tool={tool}/>
+                <Tool toolStyle={toolStyle} tools={tools}/>
             </div>
             
         </article>

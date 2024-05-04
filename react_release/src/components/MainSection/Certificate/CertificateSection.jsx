@@ -1,16 +1,16 @@
 import CertificateItem from './CertificateItem';
-import Title from '../Title'
+import Title from '../../../utils/Title'
 import { LiaCertificateSolid } from "react-icons/lia";
 
 
 export default function CertificateSection() {
 
     return(
-        <section style={{display: "flex", flexDirection: "column", gap: "2em"}}>
+        <section style={{display: "flex", flexDirection: "column", gap: "2em", width: "100%", minHeight: "100vh"}} id='certificate'>
             <Title title={'CERTIFICATS'}>
                 <LiaCertificateSolid />
             </Title>
-            <div style={{display: "flex", justifyContent: "center", alignItems: "center", gap: "2em"}}>
+            <div style={{display: "flex", justifyContent: "space-around", alignItems: "center", gap: "2em"}}>
                 <CertificateItem 
                     title={"PRODUCT OWNER"} 
                     academy={"Dthinking academy"} 

@@ -20,7 +20,8 @@ export default function CertificateItem({title, academy, link, imagePath}) {
         alignItems: "center",
         padding: "0.5em",
         gap: "0.5em",
-        background: "rgba(255, 255, 255, 0.211)"
+        background: "rgba(255, 255, 255, 0.211)",
+        boxShadow: "1px 1px 5px black",
         
     }
 

@@ -1,39 +1,25 @@
 import { RiExternalLinkLine } from "react-icons/ri";
-import { IoPlayOutline, IoPauseOutline } from "react-icons/io5";
+import { IoPlayOutline} from "react-icons/io5";
 import { IconContext } from 'react-icons';
 import { useState, useRef, useEffect } from "react";
 import { RxCross1 } from "react-icons/rx";
 
-function VideoPlayer({path, isPlaying, setIsPlaying}) {
+function VideoPlayer({path, isPlaying}) {
     
     const ref = useRef(null);
 
-
     useEffect(() => {
         if(isPlaying) {
-            ref.current.play;
-        } else {
             ref.current.pause;
+        } else {
+            ref.current.play;
         }
-    }, [isPlaying] )
+    })
 
-    return(
-        <video ref={ref} onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)}>
-            <source src={path} type="video/mp4"/>
-        </video>
-    )
+    return <video ref={ref} src={path}/>
 }
 
-function ModalScreen({path, setVideo, video}) {
-
-    const [isPlaying, setIsPlaying] = useState(false);
-    const videoRef = useRef(null);
-
-    useEffect(() => {
-        if(video) {
-            videoRef.current.focus();
-        }
-    }, [video])
+function ModalScreen({path, setVideo, setHover, hover, stylebutton}) {
 
     const modalScreenStyle = {
         position: "fixed",
@@ -58,24 +44,22 @@ function ModalScreen({path, setVideo, video}) {
         justifyContent: "space-between",
         alignItems: "center",
         gap: "1em",
-        background: "#ffffff",
+        background: "#D8D8D8",
+        borderRadius: "20px"
     }
 
     return (
-        <section style={modalScreenStyle} ref={videoRef}>
-            <IconContext.Provider value={{size: '1.5em', color: "#152131"}}>
+        <section style={modalScreenStyle}>
+            <IconContext.Provider value={{size: '2em', color: hover ? "#FFFFFF" : "#152131"}}>
                 <div style={videoFrameStyle}>
-                    <button onClick={() => setIsPlaying(!isPlaying)}>
-                        {isPlaying ? <IoPlayOutline/> : <IoPauseOutline/> }
-                    </button>
-                    <VideoPlayer path={path} isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
-                    <button onClick={() => setVideo(false)}>
+                    <button onClick={() => setVideo(false)} style={stylebutton} onPointerEnter={() => setHover(true)} onPointerLeave={() => setHover(false)}>
                         <RxCross1 />
                     </button>
+                    <video src={path} loop playsInline controls style={{borderRadius: "10px"}}/>
                 </div>
             </IconContext.Provider>
         </section>
-    )
+    );
 }
 
 export default function Link({type, path}) {
@@ -113,7 +97,7 @@ export default function Link({type, path}) {
                     
                 </IconContext.Provider>
             </div>
-            {video && <ModalScreen path={path} setVideo={setVideo} video={video}/>}
+            {video && <ModalScreen path={path} setVideo={setVideo} video={video} setHover={setHover} hover={hover} stylebutton={linkStyle}/>}
         </>
     )
 }
