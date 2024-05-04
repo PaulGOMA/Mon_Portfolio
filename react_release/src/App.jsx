@@ -5,10 +5,10 @@ import MainSection from './components/MainSection/MainSection'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
-
+  const basename = import.meta.env.MODE === "production" ? "/Mon_Portfolio" : "";
   return (
     <>
-      <Router>
+      <Router basename={basename}>
         <Menu/>
         <Infocard/>
         <Routes>
