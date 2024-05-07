@@ -32,7 +32,7 @@ function ModalMenu({TabIcon, setModalMenu, ScrollToSection}) {
     return(
         <nav style={modalScreenStyle}>
             <ul style={menuStyle}>
-                <button style={{border: "none", background: "none", paddingBottom: "5rem"}} onClick={() => setModalMenu(false)}>
+                <button style={{border: "none", background: "none", paddingBottom: "5rem", cursor: "pointer"}} onClick={() => setModalMenu(false)}>
                     <IconContext.Provider value={{size: '2em', color: "white"}}>
                         <GrClose />
                     </IconContext.Provider>
@@ -134,6 +134,7 @@ export default function Menu() {
         position: "fixed",
         top: "5vh",
         right: "5vw",
+        zIndex: "1000"
     }
 
 

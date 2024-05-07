@@ -2,51 +2,45 @@ import { useState } from "react";
 import { RiExternalLinkLine } from "react-icons/ri";
 
 
-export default function CertificateItem({title, academy, link, imagePath}) {
+export default function CertificateItem({title, academy, link, imagePath, alt}) {
 
     const [hover, setHover] = useState(false);
 
     let style = {
-        borderColor : "#BAB7B7",
+        borderColor : "#838282",
         borderWidth : "1px",
         borderStyle : "solid",
         borderRadius: "1.5em",
         content: "",
-        width: "205px",
-        height: "260px",
+        width: "100%",
+        height: "fit-content",
         display: "flex",
-        flexDirection: "column",
+        flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        padding: "0.5em",
+        padding: "0.5em 1em",
         gap: "0.5em",
         background: "rgba(255, 255, 255, 0.211)",
-        boxShadow: "1px 1px 5px black",
-        
-    }
-
-    if(hover){
-        style = {
-            ...style,
-            borderColor : "#FBBE6C",
-            transition: "0.3s ease",
-            transform: "scale(1.1)"
-        }
+        transition: hover ? "0.3s ease" : "none",
+        transform: hover ? 'scale(1.025)' : "none",
+        boxShadow: "0.5px 1px 1px 1px white"
     }
 
     return (
         <article style={style} onPointerEnter={() => setHover(true)} onPointerLeave={() => setHover(false)}>
+            <article  style={{height: "100%", display: "flex", justifyContent: "start", flexDirection: "column", alignItems: "center"}}>
+                <h2 style={{fontSize: "18px", color: hover ? "#FBBE6C" : "white", textAlign: "center", fontFamily: "pacifico"}}>{title}</h2>
+                <p style={{fontSize: "18px"}}>{academy}</p>
+                <div style={{width: "fit-content", borderBottom: "2px solid white", padding: "8px 0px"}}>
+                    <a 
+                        href={link} 
+                        style={{textDecoration: "none", color: "white", display: "flex", gap: "4px"}}
+                        target="_blank"
+                    ><p>Afficher la certification</p> <RiExternalLinkLine color="white"/></a>
+                </div>                
+            </article>            
             <div>
-                <img src={imagePath} width="200" height="142" style={{borderRadius: "1em"}}/>
-            </div>            
-            <h2 style={{fontSize: "18px", color: hover ? "#FBBE6C" : "#BAB7B7", textAlign: "center"}}>{title}</h2>
-            <p style={{fontSize: "14px"}}>{academy}</p>
-            <div style={{width: "fit-content", borderBottom: "2px solid #BAB7B7", padding: "8px 0px"}}>
-                <a 
-                    href={link} 
-                    style={{textDecoration: "none", color: "#BAB7B7", display: "flex", gap: "4px"}}
-                    target="_blank"
-                ><p>Afficher la certification</p> <RiExternalLinkLine color="#BAB7B7"/></a>
+                <img src={imagePath} width="200" height="142" style={{borderRadius: "1em"}} alt={alt}/>
             </div>
         </article>
     )

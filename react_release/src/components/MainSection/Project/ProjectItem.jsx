@@ -1,4 +1,3 @@
-import { useId } from "react"
 import  Link  from "./Link"
 
 function Tool({toolStyle, tools}) {
@@ -38,7 +37,7 @@ export default function ProjectItem({image, tools, title, content, typePath, pat
         alignItems: "center",
         padding: "5px",
         boxSizing: "border-box",
-        gap: "1em"
+        gap: "0.5em"
     }
 
     let toolStyle = {
@@ -56,11 +55,10 @@ export default function ProjectItem({image, tools, title, content, typePath, pat
             <img src={image} style={{width: "100%", borderRadius: "20px"}}/>
             <div style={layer}>
                 <h2 style={{color: "#FFF"}}>{title}</h2>
-                <p style={{color: "#FFF"}}>{content}</p>
+                <p style={{color: "#FFF", padding:"1rem", fontSize: '0.8rem'}}>{content}</p>
                 <Link type={typePath} path={path}/>
                 <Tool toolStyle={toolStyle} tools={tools}/>
             </div>
-            
         </article>
     )
 }

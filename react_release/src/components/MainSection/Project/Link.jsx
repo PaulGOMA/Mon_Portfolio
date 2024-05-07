@@ -1,25 +1,24 @@
 import { RiExternalLinkLine } from "react-icons/ri";
 import { IoPlayOutline} from "react-icons/io5";
 import { IconContext } from 'react-icons';
-import { useState, useRef, useEffect } from "react";
+import { useEffect, useState} from "react";
 import { RxCross1 } from "react-icons/rx";
 
-function VideoPlayer({path, isPlaying}) {
-    
-    const ref = useRef(null);
+
+function ModalScreen({path, setVideo, video}) {
 
     useEffect(() => {
-        if(isPlaying) {
-            ref.current.pause;
-        } else {
-            ref.current.play;
+        const originalStyle = window.getComputedStyle(document.body).overflow;
+        if(video)
+        {
+            document.body.style.overflow = 'hidden';
         }
-    })
+        
+        return () => {
+            document.body.style.overflow = originalStyle;
+        };
+    }, [video]);
 
-    return <video ref={ref} src={path}/>
-}
-
-function ModalScreen({path, setVideo, setHover, hover, stylebutton}) {
 
     const modalScreenStyle = {
         position: "fixed",
@@ -36,7 +35,7 @@ function ModalScreen({path, setVideo, setHover, hover, stylebutton}) {
 
     const videoFrameStyle = {
         width: "fit-content",
-        height: "auto",
+        height: "fit-content",
         padding: "20px",
         boxSizing: "border-box",
         display: "flex",
@@ -50,16 +49,14 @@ function ModalScreen({path, setVideo, setHover, hover, stylebutton}) {
 
     return (
         <section style={modalScreenStyle}>
-            <IconContext.Provider value={{size: '2em', color: hover ? "#FFFFFF" : "#152131"}}>
                 <div style={videoFrameStyle}>
-                    <button onClick={() => setVideo(false)} style={stylebutton} onPointerEnter={() => setHover(true)} onPointerLeave={() => setHover(false)}>
+                    <button onClick={() => setVideo(false)}>
                         <RxCross1 />
                     </button>
-                    <video src={path} loop playsInline controls style={{borderRadius: "10px"}}/>
+                    <video src={path} loop playsInline controls style={{borderRadius: "10px", height: "80vh"}}/>
                 </div>
-            </IconContext.Provider>
         </section>
-    );
+    )
 }
 
 export default function Link({type, path}) {
@@ -67,22 +64,14 @@ export default function Link({type, path}) {
     const [hover, setHover] = useState(false);
     const [video, setVideo] = useState(false);
 
-
     let linkStyle = {
-        backgroundColor: "#FFFFFF",
+        backgroundColor: hover ? "#152131" : "#FFFFFF",
         width: "fit-content",
         height: "auto",
         borderRadius: "100%",
         padding: "0.5em",
         cursor: "pointer",
-    }
-
-    if(hover){
-        linkStyle = {
-            ...linkStyle,
-            backgroundColor : "#152131",
-            transition: "0.3s"
-        }
+        transition: hover ? "0.3s" : "none",
     }
 
     return(
@@ -97,7 +86,7 @@ export default function Link({type, path}) {
                     
                 </IconContext.Provider>
             </div>
-            {video && <ModalScreen path={path} setVideo={setVideo} video={video} setHover={setHover} hover={hover} stylebutton={linkStyle}/>}
+            {video && <ModalScreen path={path} setVideo={setVideo} video={video}/>}
         </>
     )
 }
