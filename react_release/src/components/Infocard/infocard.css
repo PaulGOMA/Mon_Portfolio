@@ -67,6 +67,8 @@ p
 
 @media screen and (max-width: 806px){
     .Infocard-container {
+        position: relative;
+        margin: auto 25vw;
         font-size: 13px;
     }
 
