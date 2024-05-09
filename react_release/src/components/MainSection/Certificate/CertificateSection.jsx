@@ -2,11 +2,15 @@ import CertificateItem from './CertificateItem';
 import Title from '../../../utils/Title'
 import { LiaCertificateSolid } from "react-icons/lia";
 import { CertificateInfo } from '../../../utils/CertificateInfo';
+import { LayoutContext } from '../../../context/LayoutContext';
+import { useContext } from 'react';
 
 export default function CertificateSection() {
 
+    const layout = useContext(LayoutContext);
+
     return(
-        <section style={{display: "flex", flexDirection: "column", gap: "2em", width: "100%", minHeight: "100vh"}} id='certificate'>
+        <section style={layout} id='certificate'>
             <Title title={'CERTIFICATS'}>
                 <LiaCertificateSolid />
             </Title>

@@ -1,14 +1,22 @@
 import Title from '../../../utils/Title'
 import { SlHome } from "react-icons/sl";
+import useMediaQuery from '../../hook/UseMediaQuery';
+import { useContext } from 'react';
+import { LayoutContext } from '../../../context/LayoutContext';
+
 
 export default function IntroduceSection() {
+
+    const layout = useContext(LayoutContext);
+    const isLargeScreen = useMediaQuery('(max-width: 807px)');
+
     return (
-        <section style={{display: "flex", flexDirection: "column", width: "100%", minHeight: "100vh", justifyContent: "start"}} id='introduce'>
+        <section style={layout} id='introduce'>
             <Title title={'PRESENTATION'}>
                 <SlHome />
             </Title>
             <div style={{height: "100vh", display: "flex", justifyContent: "center", flexDirection: "column"}}>
-                <p style={{fontSize: "5rem", color: "white", lineHeight: "1.5em"}}>
+                <p style={{fontSize: isLargeScreen? "3em" : "5em", color: "white", lineHeight: "1.5em"}}>
                     Salut, Je suis <span style={{color: "#FBBE6C"}}>Paul Valérie</span> étudiant en 4<sup>e </sup> 
                     année de cycle ingénieur à l&apos; <abbr title="Ecole Centrale d'Electronique" style={{textDecoration: "none"}}>ECE Paris. </abbr> 
                 </p>

@@ -2,10 +2,16 @@ import EducationItem from './EducationItem';
 import Title from '../../../utils/Title'
 import { IoSchoolOutline } from "react-icons/io5";
 import { EducationInfos } from '../../../utils/EducationInfos';
+import { LayoutContext } from '../../../context/LayoutContext';
+import { useContext } from 'react';
+
 
 export default function EducationSection() {
+
+    const layout = useContext(LayoutContext);
+
     return(
-        <section style={{display: "flex", flexDirection: "column", width: "100%", minHeight: "100vh", justifyContent: "start"}} id='education'>
+        <section style={layout} id='education'>
             <Title title={'ETUDES & EXPERIENCE PROFESSIONNELLE'}>
                 <IoSchoolOutline />
             </Title>

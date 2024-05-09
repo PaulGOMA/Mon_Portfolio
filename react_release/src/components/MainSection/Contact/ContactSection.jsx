@@ -3,11 +3,15 @@ import Title from '../../../utils/Title'
 import Mail from "./Mail";
 import { IconContext } from 'react-icons';
 import { ContactInfo } from "../../../utils/ContactInfo";
-
+import { LayoutContext } from "../../../context/LayoutContext";
+import { useContext } from "react";
 
 export default function ContactSection() {
+
+    const layout = useContext(LayoutContext);
+
     return(
-        <section style={{display: "flex", flexDirection: "column", width: "100%", minHeight: "100vh", justifyContent: "start"}} id='contact'>
+        <section style={layout} id='contact'>
             <Title title={"CONTACT"}>
                 <BsTelephone />
             </Title>
@@ -15,7 +19,7 @@ export default function ContactSection() {
                 <IconContext.Provider value={{size: '1em', color: "#FBBE6C"}}>
                     {
                         ContactInfo.map((contact) => (
-                            <div key={contact.id} style={{marginBottom: "1.5rem"}}>
+                            <div key={contact.id} style={{marginBottom: "1rem"}}>
                                 {contact.icon}<span style={{marginLeft : "1em"}}>{contact.info}</span>
                             </div>                           
                         ))

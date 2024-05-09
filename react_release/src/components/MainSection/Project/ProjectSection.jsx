@@ -3,13 +3,16 @@ import { GrProjects } from "react-icons/gr";
 import ProjectItem from './ProjectItem';
 import { ProjectInfo } from '../../../utils/ProjectInfo';
 import useMediaQuery from '../../hook/UseMediaQuery';
+import { LayoutContext } from '../../../context/LayoutContext';
+import { useContext } from 'react';
 
 export default function ProjectSection() {
 
+    const layout = useContext(LayoutContext);
     const isLargeScreen = useMediaQuery('(max-width: 806px)');
 
     return(
-        <section style={{display: "flex", flexDirection: "column", gap: "2em", width: "100%", minHeight: "auto", marginBottom: "2rem"}} id='project'>
+        <section style={layout} id='project'>
             <Title title={'PROJETS'}>
                 <GrProjects />
             </Title>

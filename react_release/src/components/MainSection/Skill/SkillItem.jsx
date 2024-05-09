@@ -1,8 +1,10 @@
 import { useState } from "react"
 import { IconContext } from 'react-icons';
+import useMediaQuery from "../../hook/UseMediaQuery";
 
 export default function SkillItem({children, title, SkillList, hasListIcon}){
 
+    const isLargeScreen = useMediaQuery('(max-width: 806px)');
     const [hover, setHover] = useState(false);
 
     const iconContainer = {
@@ -21,7 +23,7 @@ export default function SkillItem({children, title, SkillList, hasListIcon}){
         width: "fit-content",
         height: 'fit-content',
         borderColor : hover ? "#FFB04A" : "#BAB7B7",
-        borderWidth : "3.5px",
+        borderWidth : "1.5px",
         borderStyle : "solid",
         borderRadius: '15px',
         position : "relative",
@@ -46,7 +48,7 @@ export default function SkillItem({children, title, SkillList, hasListIcon}){
                 </IconContext.Provider>
             </div>
 
-            <div style={{display: "flex", flexDirection: "column", gap: "1em"}}>
+            <div style={{display: "flex", flexDirection: "column", gap: "1em", fontSize: isLargeScreen ? "12px" : "16px"}}>
                 <h1 style={{fontSize: "20px", color: hover ? "#FBBE6C" : "#BAB7B7"}}>{title}</h1>
                 <div style={{display: "flex", flexDirection: "column", gap: "0.5em"}}>
                     {hasListIcon ? SkillList.map((skill) => (

@@ -1,27 +1,24 @@
 import { useState } from "react"
 import { IconContext } from 'react-icons';
+import useMediaQuery from "../hook/UseMediaQuery";
 
 export default function MailButton({children, url}) {
+
+    const isLargeScreen = useMediaQuery('(max-width: 806px)');
     const [hover, setHover] = useState(false);
 
     let style = {
         width: "80%",
         padding: "10px 20px 10px 20px",
         borderRadius: "2.5em",
-        background: "#FBBE6C",
+        background: hover ? "transparent" : "#FBBE6C",
         borderWidth : "2.5px",
         borderStyle : "solid",
-        borderColor : "transparent"
+        borderColor : hover ? "#FBBE6C" : "transparent",
+        transition: hover ? "0.7s ease" : "none",
+        fontSize: isLargeScreen ? "12px" : "16px",
     }
 
-    if(hover){
-        style = {
-            ...style,
-            background: "transparent",
-            borderColor : "#FBBE6C",
-            transition: "0.7s ease"
-        }
-    }
     let aStyle = {
         textDecoration: "none", 
         display: "flex", 

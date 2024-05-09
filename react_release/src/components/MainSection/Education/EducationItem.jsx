@@ -1,9 +1,10 @@
 import { useState } from "react"
 import { RiExternalLinkLine } from "react-icons/ri";
-import PropTypes from 'prop-types'
+import useMediaQuery from "../../hook/UseMediaQuery";
 
 export default function EducationItem({year, info, establishment, schoolUrl}) {
 
+    const isLargeScreen = useMediaQuery('(max-width: 806px)');
     const [hover, setHover] = useState(false);
 
     let style = {
@@ -13,6 +14,7 @@ export default function EducationItem({year, info, establishment, schoolUrl}) {
         borderLeftStyle : "solid",
         position : "relative",
         transition: hover ? "0.3s ease" : "none",
+        fontSize: isLargeScreen ? "12px" : "16px",
     }
 
     let circleStyle = {
@@ -28,12 +30,12 @@ export default function EducationItem({year, info, establishment, schoolUrl}) {
     }
 
     return(
-        <section style={style} onPointerEnter={() => setHover(true)} onPointerLeave={() => setHover(false)}>
+        <section style={style} onPointerEnter={() => setHover(true)} onPointerLeave={() => setHover(false)} >
             <div style={circleStyle}/>
-            <div style={{display: "flex", flexDirection: "column", gap: "1em", fontSize: "1.2rem"}}>
-                <time style={{fontSize: "1.2rem", color: hover ? "#FBBE6C" : "#BAB7B7"}}>{year}</time>
+            <div style={{display: "flex", flexDirection: "column", gap: "1em", fontSize: "1.2em"}}>
+                <time style={{fontSize: "1.2em", color: hover ? "#FBBE6C" : "#BAB7B7"}}>{year}</time>
                 {info}
-                <p style={{display: "flex", flexDirection: "row", gap: "1em", fontSize: "1.2rem"}}>
+                <p style={{display: "flex", flexDirection: "row", gap: "1em", fontSize: "1.2em"}}>
                     {establishment}
                     <a href={schoolUrl} target="_blank">
                         <RiExternalLinkLine color={hover ? "#FBBE6C" : "#BAB7B7"}/>
@@ -43,11 +45,4 @@ export default function EducationItem({year, info, establishment, schoolUrl}) {
             </div>
         </section>
     )
-}
-
-EducationItem.propTypes = {
-    year: PropTypes.string.isRequired,
-    establishment: PropTypes.string.isRequired,
-    schoolUrl: PropTypes.string.isRequired,
-    info: PropTypes.object.isRequired || PropTypes.string.isRequired
 }
