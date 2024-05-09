@@ -15,7 +15,7 @@ export default function ContactSection() {
             <Title title={"CONTACT"}>
                 <BsTelephone />
             </Title>
-            <article style={{height: "100vh", display: "flex", justifyContent: "center", flexDirection: "column"}}>
+            <article style={{height: "max-content", display: "flex", justifyContent: "center", flexDirection: "column", fontSize: "16px"}}>
                 <IconContext.Provider value={{size: '1em', color: "#FBBE6C"}}>
                     {
                         ContactInfo.map((contact) => (
@@ -25,7 +25,7 @@ export default function ContactSection() {
                         ))
                     }
                     <div>
-                        <span style={{display: "flex", justifyContent: "center", fontSize: "2em", color: "#FBBE6C", fontFamily: "pacifico", marginBottom: "4rem"}}>
+                        <span style={{display: "flex", justifyContent: "center", fontSize: "2em", color: "#FBBE6C", fontFamily: "pacifico"}}>
                             Ecrivez moi !
                         </span>
                         <Mail/>

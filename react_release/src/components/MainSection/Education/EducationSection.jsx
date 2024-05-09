@@ -15,7 +15,7 @@ export default function EducationSection() {
             <Title title={'ETUDES & EXPERIENCE PROFESSIONNELLE'}>
                 <IoSchoolOutline />
             </Title>
-            <article style={{height: "100vh", display: "flex", justifyContent: "center", flexDirection: "column"}}>
+            <article style={{height: "max-content", display: "flex", justifyContent: "center", flexDirection: "column"}}>
                 {
                     EducationInfos.map((education) => (
                         <EducationItem key={education.year} year={education.year} establishment={education.establishment} schoolUrl={education.url} info={education.info}/>

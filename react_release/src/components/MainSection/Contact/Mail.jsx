@@ -23,9 +23,8 @@ export default function Mail() {
         backgroundColor: "transparent", 
         border: "3px solid #BAB7B7",
         borderRadius: "15px",
-        padding: "10px",
-
-        fontSize: "1em",
+        padding: "0.7em",
+        fontSize: "0.8em",
         color: "white"
     }
 
@@ -59,7 +58,7 @@ export default function Mail() {
     }
     
     return(
-        <form ref={form} onSubmit={sendEmail} style={{display: "grid", rowGap: "20px", columnGap: "50px", gridTemplateRows: "1fr 4fr 1fr", width: "100%"}}>
+        <form ref={form} onSubmit={sendEmail} style={{display: "grid", rowGap: "2em", columnGap: "2em", gridTemplateRows: "1fr 4fr 1fr", width: "100%"}}>
             <input type="text" name="to_name" style={namePosition} placeholder='Nom'/>
             <input type="email" name="from_name" style={mailPosition} placeholder='Addresse mail'/>
             <textarea name="message" style={messagePosition} placeholder='Message'/>

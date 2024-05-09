@@ -14,7 +14,7 @@ export default function ProfileSection() {
             <Title title={'PROFIL'}>
                 <FaRegUser />
             </Title>
-            <div style={{height: "100vh", display: "flex", justifyContent: "center", flexDirection: "column", gap: "2rem", fontSize: isLargeScreen ? "12px" : "16px"}}>
+            <div style={{height: "auto", display: "flex", justifyContent: "center", flexDirection: "column", gap: "2rem", fontSize: isLargeScreen ? "12px" : "16px"}}>
                 <p style={{fontSize: "1.7em", textAlign: "justify"}}>
                 Actuellement en 4<sup>e</sup> année dans la majeure Product Engineering and Innovation, mon parcours universitaire m&apos;a fait découvrir le monde merveilleux et passionnant de la conception des systèmes mécaniques, électroniques, 
                 du developpement web, de l&apos;UI/UX design, du l&apos;IHM me permettant ainsi d&apos;avoir une vue sur le processus de concpeption d&apos;un produit depuis sa phase de recherche jusqu&apos;à sa phase de réalisation.<br /><br />
