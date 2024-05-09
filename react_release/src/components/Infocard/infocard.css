@@ -57,8 +57,7 @@ p
 @media screen and (max-width: 1300px){
     .Infocard-container {
         position: relative;
-        margin: 0 auto 1rem 1rem;
-        padding: 2rem 10rem 0.5rem 10rem;
+        margin: auto 25vw;
         width: auto;
     }
 }
