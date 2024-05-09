@@ -69,4 +69,10 @@ p
     .Infocard-container {
         font-size: 13px;
     }
+
+    .picture
+    {
+        width: 8em;
+        height: auto;
+    }
 }
