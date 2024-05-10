@@ -1,4 +1,4 @@
-import { SiDart, SiFlutter, SiPython, SiPhp, SiC, SiCplusplus, SiCss3, SiHtml5, SiJavascript, SiNodedotjs, SiReact, SiMysql, SiFigma, SiAdobephotoshop, SiAutodesk, SiComsol, SiDassaultsystemes, SiCisco, SiUnity, SiNotion, SiAirtable, SiGit, SiDocker, SiMongodb, SiPowerbi, SiPowerautomate} from "react-icons/si";
+import { SiDart, SiFlutter, SiPython, SiPhp, SiC, SiCplusplus, SiCss3, SiHtml5, SiJavascript, SiTypescript, SiNodedotjs, SiReact, SiMysql, SiFigma, SiAdobephotoshop, SiAutodesk, SiComsol, SiDassaultsystemes, SiCisco, SiUnity, SiNotion, SiAirtable, SiGit, SiDocker, SiMongodb, SiPowerbi, SiPowerautomate} from "react-icons/si";
 
 export const Innovation = [
     {id: 0, skill: "Lean management"},
@@ -11,7 +11,7 @@ export const Innovation = [
 ];
 
 export const Programmation = [
-    {title: "web", icon: [<SiHtml5 key={0}/>, <SiCss3 key={1}/>, <SiJavascript key={2}/>, <SiReact key={3}/>, <SiNodedotjs key={4}/>]},
+    {title: "web", icon: [<SiHtml5 key={0}/>, <SiCss3 key={1}/>, <SiJavascript key={2}/>, <SiTypescript key={3}/>, <SiReact key={4}/>, <SiNodedotjs key={5}/>]},
     {title: "Mobile", icon: [<SiDart key={0}/>, <SiFlutter key={1}/>]},
     {title: "Data Analyst", icon: [<SiPython key={0}/>]},
     {title: "Base de données", icon: [<SiMysql key={0} size={"2.5em"}/>, <SiPhp key={1}/>]},
