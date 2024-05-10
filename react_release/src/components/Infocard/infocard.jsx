@@ -10,9 +10,7 @@ export default function Infocard() {
     return <aside className="Infocard-container">
         <h1 className='name'>Paul Valerie GOMA</h1>
         <h2 className='student'>Etudiant, France</h2>
-        <div >
-            <img src={profil} alt = "Profile picture of Paul Valerie GOMA" className='picture'/> 
-        </div>
+        <img src={profil} alt = "Profile picture of Paul Valerie GOMA" className='picture'/> 
         <h3 className='portfolio'>mon portfolio</h3>
         <section className='icon-container'>
             {

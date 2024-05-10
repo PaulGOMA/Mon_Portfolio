@@ -9,7 +9,7 @@ export default function MailButton({children, url}) {
 
     let style = {
         width: "80%",
-        padding: "10px 20px 10px 20px",
+        padding: "10px 20px",
         borderRadius: "2.5em",
         background: hover ? "transparent" : "#FBBE6C",
         borderWidth : "2.5px",

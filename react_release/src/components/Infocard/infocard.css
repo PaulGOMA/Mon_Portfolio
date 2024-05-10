@@ -40,6 +40,7 @@
     border-radius: 250px;
     width: 15em;
     height: auto;
+    display: block;
 }
 
 .icon-container
@@ -76,6 +77,18 @@ p
     .picture
     {
         width: 15em;
+        height: auto;
+    }
+}
+
+@media screen and (max-height: 520px){
+    .Infocard-container{
+        height: auto;
+    }
+
+    .picture
+    {
+        width: 10em;
         height: auto;
     }
 }
