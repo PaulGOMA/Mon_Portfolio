@@ -15,11 +15,11 @@ export default function ContactSection() {
             <Title title={"CONTACT"}>
                 <BsTelephone />
             </Title>
-            <article style={{height: "max-content", display: "flex", justifyContent: "center", flexDirection: "column", fontSize: "16px"}}>
+            <article style={{minHeight: "100vh", display: "flex", justifyContent: "center", flexDirection: "column", fontSize: "16px"}}>
                 <IconContext.Provider value={{size: '1em', color: "#FBBE6C"}}>
                     {
                         ContactInfo.map((contact) => (
-                            <div key={contact.id} style={{marginBottom: "1rem"}}>
+                            <div key={contact.id} style={{marginBottom: "1em"}}>
                                 {contact.icon}<span style={{marginLeft : "1em"}}>{contact.info}</span>
                             </div>                           
                         ))
