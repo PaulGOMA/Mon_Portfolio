@@ -11,7 +11,7 @@ export default function ContactSection() {
     const layout = useContext(LayoutContext);
 
     return(
-        <section style={layout} id='contact'>
+        <section style={layout} id='CONTACT'>
             <Title title={"CONTACT"}>
                 <BsTelephone />
             </Title>

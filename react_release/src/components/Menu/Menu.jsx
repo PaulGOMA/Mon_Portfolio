@@ -6,7 +6,18 @@ import useMediaQuery from "../hook/UseMediaQuery";
 import { SlMenu } from "react-icons/sl";
 import { GrClose } from "react-icons/gr";
 
-function ModalMenu({TabIcon, setModalMenu, ScrollToSection}) {
+function ModalMenu({TabIcon, setModalMenu, ScrollToSection, modalMenu}) {
+
+    useEffect(() => {
+        const originalStyle = window.getComputedStyle(document.body).overflow;
+        if(modalMenu)
+        {
+            document.body.style.overflow = 'hidden';
+        }
+        return () => {
+            document.body.style.overflow = originalStyle;
+        };
+    }, [modalMenu]);
 
     const modalScreenStyle = {
         position: "fixed",
@@ -167,7 +178,7 @@ export default function Menu() {
                                 <SlMenu />
                             </IconContext.Provider>
                         </button>  
-                        {modalMenu && <ModalMenu TabIcon={NavIcons} setModalMenu={setModalMenu} ScrollToSection={ScrollToSection}/>}
+                        {modalMenu && <ModalMenu TabIcon={NavIcons} setModalMenu={setModalMenu} ScrollToSection={ScrollToSection} modalMenu={modalMenu}/>}
                     </>
                     
                 )

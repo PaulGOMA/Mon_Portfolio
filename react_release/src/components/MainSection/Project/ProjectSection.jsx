@@ -12,7 +12,7 @@ export default function ProjectSection() {
     const isLargeScreen = useMediaQuery('(max-width: 806px)');
 
     return(
-        <section style={layout} id='project'>
+        <section style={layout} id='PROJETS'>
             <Title title={'PROJETS'}>
                 <GrProjects />
             </Title>

@@ -11,7 +11,7 @@ export default function EducationSection() {
     const layout = useContext(LayoutContext);
 
     return(
-        <section style={layout} id='education'>
+        <section style={layout} id='ETUDES & EXPERIENCE PROFESSIONNELLE'>
             <Title title={'ETUDES & EXPERIENCE PROFESSIONNELLE'}>
                 <IoSchoolOutline />
             </Title>

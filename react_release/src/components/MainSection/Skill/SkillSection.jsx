@@ -14,7 +14,7 @@ export default function SkillSection() {
     const isLargeScreen = useMediaQuery('(max-width: 806px)');
 
     return(
-        <section style={layout} id='skill'>
+        <section style={layout} id='COMPETENCES'>
             <Title title={'COMPETENCES'}>
                 <VscTools />
             </Title>

@@ -11,7 +11,7 @@ export default function IntroduceSection() {
     const isLargeScreen = useMediaQuery('(max-width: 807px)');
 
     return (
-        <section style={layout} id='introduce'>
+        <section style={layout} id='PRESENTATION'>
             <Title title={'PRESENTATION'}>
                 <SlHome />
             </Title>

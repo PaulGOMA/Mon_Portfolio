@@ -10,7 +10,7 @@ export default function ProfileSection() {
     const layout = useContext(LayoutContext);
 
     return(
-        <section style={layout} id='profile'>
+        <section style={layout} id='PROFIL'>
             <Title title={'PROFIL'}>
                 <FaRegUser />
             </Title>

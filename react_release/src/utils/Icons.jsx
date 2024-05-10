@@ -14,13 +14,13 @@ import { FaGithub } from "react-icons/fa";
 
 
 export const NavIcons = [
-    {id: "introduce", icon : <SlHome />},
-    {id: "profile", icon : <FaRegUser />},
-    {id: "education", icon : <IoSchoolOutline />},
-    {id: "skill", icon : <VscTools />},
-    {id: "certificate", icon : <LiaCertificateSolid />},
-    {id: "project", icon : <GrProjects />},
-    {id: "contact", icon : <BsTelephone />}
+    {id: "PRESENTATION", icon : <SlHome />},
+    {id: "PROFIL", icon : <FaRegUser />},
+    {id: "ETUDES & EXPERIENCE PROFESSIONNELLE", icon : <IoSchoolOutline />},
+    {id: "COMPETENCES", icon : <VscTools />},
+    {id: "CERTIFICATS", icon : <LiaCertificateSolid />},
+    {id: "PROJETS", icon : <GrProjects />},
+    {id: "CONTACT", icon : <BsTelephone />}
 ]
 
 export const InfocardIcons = [

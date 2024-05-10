@@ -10,7 +10,7 @@ export default function CertificateSection() {
     const layout = useContext(LayoutContext);
 
     return(
-        <section style={layout} id='certificate'>
+        <section style={layout} id='CERTIFICATS'>
             <Title title={'CERTIFICATS'}>
                 <LiaCertificateSolid />
             </Title>
