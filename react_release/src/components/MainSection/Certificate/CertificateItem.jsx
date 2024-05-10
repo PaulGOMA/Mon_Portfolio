@@ -23,14 +23,15 @@ export default function CertificateItem({title, academy, link, imagePath, alt}) 
         background: "rgba(255, 255, 255, 0.211)",
         transition: hover ? "0.3s ease" : "none",
         transform: hover ? 'scale(1.025)' : "none",
-        boxShadow: "0.5px 1px 1px 1px white"
+        boxShadow: "0.5px 1px 1px 1px white",
+        fontSize: "16px"
     }
 
     return (
         <article style={style} onPointerEnter={() => setHover(true)} onPointerLeave={() => setHover(false)}>
-            <article  style={{height: "100%", display: "flex", justifyContent: "start", flexDirection: "column", alignItems: "center"}}>
-                <h2 style={{fontSize: "18px", color: hover ? "#FBBE6C" : "white", textAlign: "center", fontFamily: "pacifico"}}>{title}</h2>
-                <p style={{fontSize: "18px"}}>{academy}</p>
+            <article  style={{height: "100%", display: "flex", justifyContent: "start", flexDirection: "column", alignItems: "center", fontSize: "1em"}}>
+                <h2 style={{fontSize: "1.05em", color: hover ? "#FBBE6C" : "white", textAlign: "center", fontFamily: "pacifico"}}>{title}</h2>
+                <p style={{fontSize: "1.05em"}}>{academy}</p>
                 <div style={{width: "fit-content", borderBottom: "2px solid white", padding: "8px 0px"}}>
                     <a 
                         href={link} 
@@ -40,7 +41,7 @@ export default function CertificateItem({title, academy, link, imagePath, alt}) 
                 </div>                
             </article>            
             <div>
-                <img src={imagePath} width="200" height="142" style={{borderRadius: "1em"}} alt={alt}/>
+                <img src={imagePath} style={{borderRadius: "1em", width: "13em", height: "9em"}} alt={alt}/>
             </div>
         </article>
     )

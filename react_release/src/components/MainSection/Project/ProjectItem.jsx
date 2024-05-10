@@ -1,4 +1,5 @@
 import  Link  from "./Link"
+import useMediaQuery from "../../hook/UseMediaQuery"
 
 function Tool({toolStyle, tools}) {
 
@@ -14,13 +15,16 @@ function Tool({toolStyle, tools}) {
 
 export default function ProjectItem({image, tools, title, content, typePath, path}) {
 
+    const isLargeScreen = useMediaQuery('(max-width: 492px)');
+
     let style = {
         width: "100%",
         height: "100%",
         position: "relative",
         boxShadow: "1px 1px 3px black",
         borderRadius: "20px",
-        display: "flex"
+        display: "flex",
+        fontSize: isLargeScreen ? "13px" : "16px",
     }
 
     let layer = {
@@ -37,7 +41,8 @@ export default function ProjectItem({image, tools, title, content, typePath, pat
         alignItems: "center",
         padding: "5px",
         boxSizing: "border-box",
-        gap: "0.5em"
+        gap: "0.5em",
+        fontSize: "1em",
     }
 
     let toolStyle = {
@@ -55,7 +60,7 @@ export default function ProjectItem({image, tools, title, content, typePath, pat
             <img src={image} style={{width: "100%", borderRadius: "20px"}}/>
             <div style={layer}>
                 <h2 style={{color: "#FFF"}}>{title}</h2>
-                <p style={{color: "#FFF", padding:"1rem", fontSize: '0.8rem'}}>{content}</p>
+                <p style={{color: "#FFF", padding:"1em", fontSize: '0.8em'}}>{content}</p>
                 <Link type={typePath} path={path}/>
                 <Tool toolStyle={toolStyle} tools={tools}/>
             </div>

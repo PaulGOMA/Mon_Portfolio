@@ -59,22 +59,23 @@ p
 
 @media screen and (max-width: 1300px){
     .Infocard-container {
-        position: relative;
-        margin: auto 25vw;
-        width: auto;
+        position: static;
+        margin: auto;
+        width: 50vw;
     }
 }
 
 @media screen and (max-width: 806px){
     .Infocard-container {
-        position: relative;
-        margin: auto 15vw;
+        position: static;
+        margin: auto;
+        width: 85vw;
         font-size: 13px;
     }
 
     .picture
     {
-        width: 8em;
+        width: 15em;
         height: auto;
     }
 }
