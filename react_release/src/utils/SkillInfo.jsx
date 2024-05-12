@@ -1,4 +1,4 @@
-import { SiDart, SiFlutter, SiPython, SiPhp, SiC, SiCplusplus, SiCss3, SiHtml5, SiJavascript, SiTypescript, SiNodedotjs, SiReact, SiMysql, SiFigma, SiAdobephotoshop, SiAutodesk, SiComsol, SiDassaultsystemes, SiCisco, SiUnity, SiNotion, SiAirtable, SiGit, SiDocker, SiMongodb, SiPowerbi, SiPowerautomate} from "react-icons/si";
+import { SiDart, SiFlutter, SiPython, SiPhp, SiC, SiCplusplus, SiCss3, SiHtml5, SiJavascript, SiTypescript, SiNodedotjs, SiReact, SiMysql, SiFigma, SiAdobephotoshop, SiAutodesk, SiComsol, SiDassaultsystemes, SiCisco, SiUnity, SiNotion, SiAirtable, SiGit, SiDocker, SiMongodb, SiPowerbi, SiPowerautomate, SiDiagramsdotnet} from "react-icons/si";
 
 export const Innovation = [
     {id: 0, skill: "Lean management"},
@@ -20,7 +20,7 @@ export const Programmation = [
 ]
 
 export const Software = [
-    {title: "Design", icon: [<SiFigma key={0}/>, <SiAdobephotoshop key={1}/>]},
+    {title: "Design, prototypes", icon: [<SiFigma key={0}/>, <SiAdobephotoshop key={1}/>, <SiDiagramsdotnet key={2}/>]},
     {title: "Conception 2D/3D", icon: [<SiAutodesk key={0}/>, <SiComsol key={1} size={"3.5em"}/>, <SiDassaultsystemes key={2}/>]},
     {title: "Réseaux", icon: [<SiCisco key={0} size={"3.5em"}/>]},
     {title: "Réalité immersive", icon: [<SiUnity key={0}/>]},
